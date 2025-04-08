@@ -1,0 +1,95 @@
+// Mobile menu toggle
+document.getElementById('mobile-menu-button').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollTop = 0;
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+        // Close mobile menu if open
+        document.getElementById('mobile-menu').classList.add('hidden');
+    });
+});
+
+// Sample pool stats data (replace with real API calls in production)
+const updatePoolStats = () => {
+    document.getElementById('blockCount').textContent = '1,234';
+    document.getElementById('delegatedAda').textContent = '5.2M ADA';
+    document.getElementById('delegators').textContent = '742';
+};
+
+// FAQ data
+const faqData = [
+    {
+        question: "What makes YAM different from other stake pools?",
+        answer: "We're the only pool that measures success by both ADA rewards AND the number of marbles you retain in the process. Plus, we speak human, not crypto-genius."
+    },
+    {
+        question: "Do you really offer therapy?",
+        answer: "No, we're terrible at therapy. But watching your ADA grow while we handle the technical stuff might be therapeutic. For actual therapy, please see a professional."
+    },
+    {
+        question: "Will I get rich staking with YAM?",
+        answer: "If we could guarantee that, we'd be on a yacht instead of running a stake pool. We promise realistic returns and plenty of dad jokes."
+    },
+    {
+        question: "What's your technical expertise?",
+        answer: "We're smart enough to run a reliable stake pool but humble enough to explain it without making your brain hurt. Think of us as your crypto-competent friends who don't show off."
+    }
+];
+
+// Populate FAQ section
+const faqContainer = document.getElementById('faqContainer');
+faqData.forEach((item, index) => {
+    const faqItem = document.createElement('div');
+    faqItem.className = 'bg-white rounded-lg shadow-md overflow-hidden';
+    faqItem.innerHTML = `
+        <button class="w-full px-6 py-4 text-left font-semibold flex justify-between items-center">
+            ${item.question}
+            <i class="fas fa-chevron-down transform transition-transform duration-200"></i>
+        </button>
+        <div class="px-6 py-4 bg-gray-50 hidden">
+            ${item.answer}
+        </div>
+    `;
+    
+    const button = faqItem.querySelector('button');
+    const answer = faqItem.querySelector('div:last-child');
+    const icon = button.querySelector('i');
+    
+    button.addEventListener('click', () => {
+        answer.classList.toggle('hidden');
+        icon.classList.toggle('rotate-180');
+    });
+    
+    faqContainer.appendChild(faqItem);
+});
+
+// Initialize pool stats on page load
+updatePoolStats();
+
+// Add scroll-based animations for sections
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-10');
+        }
+    });
+}, observerOptions);
+
+// Observe all sections for scroll animations
+document.querySelectorAll('section').forEach(section => {
+    section.classList.add('transform', 'transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+    observer.observe(section);
+});

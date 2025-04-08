@@ -1,0 +1,80 @@
+/* Dark mode variables */
+:root {
+    --bg-primary: #f5f5f5;
+    --bg-secondary: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a5568;
+    --yam-color: #8C4817;
+    --cardano-blue: #0033AD;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #cbd5e0;
+    --yam-color: #8C4817;
+    --cardano-blue: #0033AD;
+}
+
+/* Logo styles */
+.site-logo {
+    height: 35px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.site-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Dark mode toggle */
+.theme-toggle {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--purple-primary);
+}
+
+/* Dark mode adjustments */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+}
+
+.bg-purple-600 {
+    background-color: var(--purple-primary) !important;
+}
+
+.text-purple-600 {
+    color: var(--purple-primary) !important;
+}
+
+.bg-white {
+    background-color: var(--bg-secondary) !important;
+}
+
+.text-gray-600 {
+    color: var(--text-secondary) !important;
+}
+
+section {
+    background-color: var(--bg-primary);
+}
+
+section.bg-gray-100 {
+    background-color: var(--bg-secondary);
+}
