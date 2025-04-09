@@ -17,6 +17,43 @@
     --cardano-blue: #0033AD;
 }
 
+/* Heartbeat Animation */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    40% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-heartbeat {
+    animation: heartbeat 1.3s infinite;
+    display: inline-block;
+    color: #ff3366;
+    margin: 0 0.2rem;
+}
+
+.sponsor-link {
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.sponsor-link:hover {
+    color: var(--cardano-blue);
+    text-shadow: 0 0 8px rgba(0, 51, 173, 0.3);
+}
+
 /* Logo styles */
 .site-logo {
     height: 35px;

@@ -44,16 +44,16 @@ const faqData = [
 ];
 
 // Populate FAQ section
-const faqContainer = document.getElementById('faqContainer');
+const faqContainer = document.getElementById('faq-container');
 faqData.forEach((item, index) => {
     const faqItem = document.createElement('div');
-    faqItem.className = 'bg-white rounded-lg shadow-md overflow-hidden';
+    faqItem.className = 'bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden mb-4';
     faqItem.innerHTML = `
-        <button class="w-full px-6 py-4 text-left font-semibold flex justify-between items-center">
-            ${item.question}
-            <i class="fas fa-chevron-down transform transition-transform duration-200"></i>
+        <button class="w-full px-6 py-4 text-left font-bold flex justify-between items-center text-gray-900 dark:text-gray-500 hover:text-[#8C4817] dark:hover:text-[#8C4817] group">
+            <span>${item.question}</span>
+            <i class="fas fa-chevron-down transform transition-transform duration-200 text-[#8C4817]"></i>
         </button>
-        <div class="px-6 py-4 bg-gray-50 hidden">
+        <div class="px-6 py-4 bg-gray-50 dark:bg-gray-700 hidden text-gray-900 dark:text-white">
             ${item.answer}
         </div>
     `;
