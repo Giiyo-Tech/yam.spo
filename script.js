@@ -13,6 +13,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
         // Close mobile menu if open
         document.getElementById('mobile-menu').classList.add('hidden');
+        
+        // Update active state
+        document.querySelectorAll('nav a').forEach(link => {
+            link.classList.remove('active');
+        });
+        this.classList.add('active');
+    });
+});
+
+// Update active menu item on scroll
+window.addEventListener('scroll', function() {
+    let scrollPosition = window.scrollY;
+    
+    // Get all sections
+    document.querySelectorAll('section').forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.clientHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
     });
 });
 

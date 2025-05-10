@@ -69,6 +69,65 @@
     transform: scale(1.1);
 }
 
+/* Navigation styles */
+nav a {
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--yam-secondary);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--yam-secondary);
+}
+
+/* Mobile navigation */
+#mobile-menu a {
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    display: block;
+    font-weight: 500;
+}
+
+#mobile-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--yam-secondary);
+    transition: width 0.3s ease;
+}
+
+#mobile-menu a:hover::after,
+#mobile-menu a.active::after {
+    width: 100%;
+}
+
+#mobile-menu a:hover,
+#mobile-menu a.active {
+    color: var(--yam-secondary);
+}
+
 /* Dark mode toggle */
 .theme-toggle {
     background: none;
