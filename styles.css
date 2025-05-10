@@ -1,10 +1,12 @@
-/* Dark mode variables */
+/* Color scheme variables */
 :root {
     --bg-primary: #f5f5f5;
     --bg-secondary: #ffffff;
     --text-primary: #1a1a1a;
     --text-secondary: #4a5568;
-    --yam-color: #8C4817;
+    --yam-primary: #8C4817; /* Main yam color */
+    --yam-secondary: #D4A76A; /* Lighter complementary yam color */
+    --yam-accent: #F3E9D9; /* Very light accent color */
     --cardano-blue: #0033AD;
 }
 
@@ -13,7 +15,9 @@
     --bg-secondary: #2d2d2d;
     --text-primary: #ffffff;
     --text-secondary: #cbd5e0;
-    --yam-color: #8C4817;
+    --yam-primary: #8C4817; /* Main yam color */
+    --yam-secondary: #D4A76A; /* Lighter complementary yam color */
+    --yam-accent: #3D2A1A; /* Darker yam color for dark mode */
     --cardano-blue: #0033AD;
 }
 
@@ -50,8 +54,8 @@
 }
 
 .sponsor-link:hover {
-    color: var(--cardano-blue);
-    text-shadow: 0 0 8px rgba(0, 51, 173, 0.3);
+    color: var(--yam-secondary);
+    text-shadow: 0 0 8px rgba(212, 167, 106, 0.3);
 }
 
 /* Logo styles */
@@ -77,7 +81,7 @@
 }
 
 .theme-toggle:hover {
-    color: var(--purple-primary);
+    color: var(--yam-secondary);
 }
 
 /* Dark mode adjustments */
@@ -88,16 +92,28 @@ body {
 }
 
 nav {
-    background-color: var(--bg-secondary) !important;
-    color: var(--text-primary) !important;
+    background-color: var(--yam-primary) !important;
+    color: white !important;
 }
 
-.bg-purple-600 {
-    background-color: var(--purple-primary) !important;
+.bg-yam-primary {
+    background-color: var(--yam-primary) !important;
 }
 
-.text-purple-600 {
-    color: var(--purple-primary) !important;
+.bg-yam-secondary {
+    background-color: var(--yam-secondary) !important;
+}
+
+.bg-yam-accent {
+    background-color: var(--yam-accent) !important;
+}
+
+.text-yam-primary {
+    color: var(--yam-primary) !important;
+}
+
+.text-yam-secondary {
+    color: var(--yam-secondary) !important;
 }
 
 .bg-white {

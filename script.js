@@ -49,9 +49,9 @@ faqData.forEach((item, index) => {
     const faqItem = document.createElement('div');
     faqItem.className = 'bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden mb-4';
     faqItem.innerHTML = `
-        <button class="w-full px-6 py-4 text-left font-bold flex justify-between items-center text-gray-900 dark:text-gray-500 hover:text-[#8C4817] dark:hover:text-[#8C4817] group">
+        <button class="w-full px-6 py-4 text-left font-bold flex justify-between items-center text-gray-900 dark:text-gray-500 hover:text-yam-primary dark:hover:text-yam-secondary group">
             <span>${item.question}</span>
-            <i class="fas fa-chevron-down transform transition-transform duration-200 text-[#8C4817]"></i>
+            <i class="fas fa-chevron-down transform transition-transform duration-200 text-yam-primary dark:text-yam-secondary"></i>
         </button>
         <div class="px-6 py-4 bg-gray-50 dark:bg-gray-700 hidden text-gray-900 dark:text-white">
             ${item.answer}
