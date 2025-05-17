@@ -10,17 +10,6 @@
     --cardano-blue: #0033AD;
 }
 
-[data-theme="dark"] {
-    --bg-primary: #1a1a1a;
-    --bg-secondary: #2d2d2d;
-    --text-primary: #ffffff;
-    --text-secondary: #cbd5e0;
-    --yam-primary: #8C4817; /* Main yam color */
-    --yam-secondary: #D4A76A; /* Lighter complementary yam color */
-    --yam-accent: #3D2A1A; /* Darker yam color for dark mode */
-    --cardano-blue: #0033AD;
-}
-
 /* Heartbeat Animation */
 @keyframes heartbeat {
     0% {
@@ -128,26 +117,11 @@ nav a.active {
     color: var(--yam-secondary);
 }
 
-/* Dark mode toggle */
-.theme-toggle {
-    background: none;
-    border: none;
-    padding: 0.5rem;
-    cursor: pointer;
-    color: var(--text-primary);
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
 
-.theme-toggle:hover {
-    color: var(--yam-secondary);
-}
 
-/* Dark mode adjustments */
 body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav {
